@@ -1,0 +1,22 @@
+/* ayarlar sayfası */
+
+.settings-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px; max-width: 640px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+.setting-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.setting-label { font-size: 14px; font-weight: 500; }
+.setting-control { display: flex; align-items: center; gap: 10px; }
+
+.text-input, .num-input {
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  color: var(--text); font-family: inherit; font-size: 14px; padding: 9px 12px;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.text-input:focus, .num-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-bg); }
+.text-input { width: 320px; }
+.num-input { width: 90px; }
+
+.setting-actions { display: flex; align-items: center; gap: 14px; padding-top: 6px; }
+.saved-msg { color: var(--ok); font-size: 13px; font-weight: 500; animation: fadeIn .3s ease; }

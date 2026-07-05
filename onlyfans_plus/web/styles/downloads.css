@@ -1,0 +1,57 @@
+/* indirmeler sayfası: durum, toplam ilerleme, aktif liste, log */
+
+.dl-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.dl-status { font-size: 15px; font-weight: 500; }
+
+.overall-bar {
+  position: relative; height: 22px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 999px; overflow: hidden;
+}
+.overall-fill {
+  position: absolute; inset: 0; width: 0%;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  border-radius: 999px; transition: width .25s cubic-bezier(.2,.0,.0,1);
+}
+.overall-fill::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+  background-size: 200% 100%; animation: shimmer 1.4s linear infinite;
+}
+.overall-text {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-size: 12px; font-weight: 600; color: var(--text); mix-blend-mode: difference;
+}
+
+.dl-stats { color: var(--muted); font-size: 12px; padding: 12px 2px; }
+.panel-label { color: var(--muted-2); font-size: 11px; font-weight: 600; padding: 14px 2px 8px; }
+
+/* aktif indirme listesi */
+.active-list {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 8px; max-height: 200px; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 8px; min-height: 60px;
+}
+.active-row {
+  background: var(--surface-2); border-radius: var(--radius-sm); padding: 10px 12px;
+  animation: cardIn .25s ease both;
+}
+.active-row .ar-top { display: flex; align-items: center; gap: 8px; }
+.active-row .ar-name { flex: 1; font-size: 12px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.active-row .ar-stats { font-size: 11px; color: var(--muted); }
+.active-row .ar-bar { height: 6px; background: var(--bg); border-radius: 4px; margin-top: 7px; overflow: hidden; }
+.active-row .ar-fill {
+  height: 100%; width: 0%; background: var(--accent); border-radius: 4px;
+  transition: width .12s linear;
+}
+.active-empty { color: var(--muted-2); font-size: 12px; text-align: center; padding: 16px; }
+
+/* log kutusu */
+.dl-log {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 14px; height: 200px; overflow-y: auto;
+  font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 1.7;
+  color: var(--muted);
+}
+.dl-log .line-ok { color: var(--ok); }
+.dl-log .line-err { color: var(--danger); }
+.dl-log .line-warn { color: var(--warn); }
