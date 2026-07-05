@@ -1,10 +1,5 @@
 # OnlyFans+
 
-[coomerfans.com](https://coomerfans.com/) için modern, kan-kırmızısı temalı bir masaüstü indirici.
-OnlyFans, Fansly ve Candfans içeriklerini arat, önizle ve tek tıkla toplu indir.
-
-Akışkan bir arayüz, her dosya için canlı ilerleme, anlık hız ve tahmini süre.
-
 ## Özellikler
 
 - İsme göre içerik üreticisi arama
@@ -24,12 +19,7 @@ pip install -r requirements.txt
 python run.py
 ```
 
-Windows 11'de pywebview sistemde bulunan WebView2 motorunu kullanır — ek kurulum gerekmez.
-
 ## Notlar
-
-Bu araç kişisel kullanım içindir. İndirdiğin içeriklerin telif hakkı üreticisine aittir;
-lütfen beğendiğin üreticileri desteklemek için resmi platformları kullan.
 
 Siteyi aşırı yormamak adına istekler arasında ayarlanabilir bir gecikme uygulanır.
 
@@ -37,6 +27,6 @@ Siteyi aşırı yormamak adına istekler arasında ayarlanabilir bir gecikme uyg
 
 <div align="center">
 
-**kynarix** · discord: `phexora`
+**PheXorA** · discord: `phexora`
 
 </div>
