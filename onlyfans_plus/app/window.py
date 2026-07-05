@@ -108,7 +108,11 @@ def _setup_icon() -> None:
     ico = os.path.join(base, "web", "logo.ico")
     if not os.path.exists(png):
         return
-    need = (not os.path.exists(ico)) or os.path.getmtime(png) > os.path.getmtime(ico)
+    # exe modunda ico zaten paketlendi, yeniden üretmeye gerek yok
+    need = (not os.path.exists(ico)) or (
+        not getattr(__import__("sys"), "frozen", False)
+        and os.path.getmtime(png) > os.path.getmtime(ico)
+    )
     if need:
         png_to_ico(png, ico)
     if os.path.exists(ico):

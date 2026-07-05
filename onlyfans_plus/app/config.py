@@ -4,10 +4,16 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 
-# onlyfans_plus paketinin içine data/ koy (app/ bir üstü = onlyfans_plus/)
-pkg_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-data_dir = os.path.join(pkg_dir, "data")
+# exe modunda ayarlar yazılabilir bir kullanıcı dizininde durur
+# (onefile _MEIPASS geçici ve salt okunur). geliştirme modunda paket içinde.
+if getattr(sys, "frozen", False):
+    _root = os.environ.get("APPDATA") or os.path.expanduser("~")
+    data_dir = os.path.join(_root, "OnlyFans+", "data")
+else:
+    pkg_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    data_dir = os.path.join(pkg_dir, "data")
 os.makedirs(data_dir, exist_ok=True)
 
 settings_path = os.path.join(data_dir, "settings.json")
