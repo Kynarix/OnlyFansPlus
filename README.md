@@ -27,6 +27,6 @@ Siteyi aşırı yormamak adına istekler arasında ayarlanabilir bir gecikme uyg
 
 <div align="center">
 
-**PheXorA** · discord: `phexora`
+**Twixx** · discord: `ashtwix`
 
 </div>
